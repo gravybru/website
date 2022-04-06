@@ -1,22 +1,20 @@
-# website
+## website
 
-## install
+### install
 
-from `xav-website` dir: `npm install`
+from `xav-website` run `npm install`
 
-## serve locally
+### serve locally
 
-from `xav-website` dir: `npm run dev`
+from `xav-website` run `npm run dev`
 
-## build + deploy
+### build + deploy
 
-from `xav-website` dir: `npm run build`
+from `xav-website` run `npm run build`, creates/updates `public`
 
 deploy:
 
-from `root` dir: `firebase deploy` (deploys public dir)
-
-## deploy
+from `root` run `firebase deploy` (deploys `public`)
 
 `firebase deploy --only hosting`
 
