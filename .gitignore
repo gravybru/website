@@ -12,3 +12,5 @@ firebase-debug.*.log*
 xav-website/node_modules/
 
 .env
+
+public
