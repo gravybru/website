@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import Camera from "../camera";
 import { useStoreState } from "../../../store/hooks";
 
-// https://coolors.co/db2b39-ffffff-29335c-f3a712-534d41
+// https://coolors.co/db2b39-b8dbd9-29335c-f3a712-534d41
 
 interface Position {
   color: string;
@@ -16,12 +16,12 @@ interface BackdropProps {
 }
 
 const Backdrop = (props: BackdropProps) => {
-  const cameraPosition = useStoreState((state) => state.camera.position);
+  const position = useStoreState((state) => state.camera.position);
 
   return (
     <div className={styles.container}>
       <Canvas>
-        <Camera position={cameraPosition} />
+        <Camera position={position} />
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         {props.positions.map(({ position, color }, index) => (
@@ -33,6 +33,7 @@ const Backdrop = (props: BackdropProps) => {
           />
         ))}
       </Canvas>
+      ,
     </div>
   );
 };

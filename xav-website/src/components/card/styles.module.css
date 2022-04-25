@@ -1,7 +1,12 @@
 .container {
-  width: 50vw;
-  border: dashed black 3px;
-  background-color: rgb(255, 255, 255, 0.75);
-  padding-left: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(255, 255, 255, 0.65);
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.cardInternal {
+  width: calc(100% - 40px);
 }

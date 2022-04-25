@@ -1,14 +1,19 @@
+import React from "react";
 import styles from "./styles.module.css";
 
-interface CardProps {
-  text: string;
-  onClick: Function;
+export interface BaseCardProps {
+  onClick?: Function;
 }
 
-const Card = (props: CardProps) => {
+const Card: React.FC<BaseCardProps> = (props) => {
   return (
-    <div className={styles.container} onClick={() => props.onClick()}>
-      <h1>{props.text}</h1>
+    <div
+      className={styles.container}
+      onClick={() => {
+        if (props.onClick) props.onClick();
+      }}
+    >
+      <div className={styles.cardInternal}>{props.children}</div>
     </div>
   );
 };
