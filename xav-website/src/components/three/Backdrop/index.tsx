@@ -15,7 +15,7 @@ interface BackdropProps {
   positions: Position[];
 }
 
-const Backdrop = (props: BackdropProps) => {
+const Backdrop = ({ positions }: BackdropProps) => {
   const position = useStoreState((state) => state.camera.position);
 
   return (
@@ -24,12 +24,13 @@ const Backdrop = (props: BackdropProps) => {
         <Camera position={position} />
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        {props.positions.map(({ position, color }, index) => (
+        {positions.map(({ position, color }, index) => (
           <Box
             key={`box-${index}`}
             position={position}
             color={color}
             wireframe={false}
+            initialDirection={index % 2 === 0}
           />
         ))}
       </Canvas>

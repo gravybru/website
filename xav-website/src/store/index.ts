@@ -1,4 +1,5 @@
 import { Action, action, createStore, debug } from "easy-peasy";
+import { POSITIONS } from "../utils/camera";
 
 interface CameraPosition {
   x: number;
@@ -10,24 +11,6 @@ interface Camera {
   position: CameraPosition;
 }
 
-const pos1 = {
-  x: 0,
-  y: 2,
-  z: 3,
-};
-
-const pos2 = {
-  x: -1,
-  y: 0,
-  z: 4,
-};
-
-const pos3 = {
-  x: 0.2,
-  y: -2,
-  z: 3,
-};
-
 export interface StoreModel {
   camera: Camera;
   setCameraPosition: Action<StoreModel, CameraPosition>;
@@ -35,7 +18,7 @@ export interface StoreModel {
 
 const store = createStore<StoreModel>({
   camera: {
-    position: pos1,
+    position: POSITIONS[0],
   },
   setCameraPosition: action((state, payload) => {
     state.camera.position = payload;
