@@ -45,6 +45,7 @@ const Nav = () => {
               if (state === ExpandableCardStates.base) handleClick(index);
             }}
             state={state}
+            large={index === 0}
           >
             {
               <ExpandableCardContent

@@ -1,5 +1,5 @@
 :root {
-  --card-animation-time: 0.33s;
+  --card-animation-time: 0.3s;
   --card-animation-func: ease-out;
   --card-animation-props: width, height, opacity;
 }
@@ -8,6 +8,28 @@
   display: flex;
   width: 200px;
   height: 90px;
+}
+
+.expanded {
+  width: 100%;
+  height: 50vh;
+}
+
+.expandedLarge {
+  width: 100%;
+  height: 150vh;
+}
+
+.hidden {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+
+.expanded,
+.expandedLarge,
+.hidden,
+.container {
   transition-property: var(--card-animation-props);
   transition-duration: var(--card-animation-time);
   transition-timing-function: var(--card-animation-func);
@@ -17,21 +39,7 @@
   .container {
     height: 120px;
   }
-}
-
-.expanded {
-  width: 100%;
-  height: 50vh;
-  transition-property: var(--card-animation-props);
-  transition-duration: var(--card-animation-time);
-  transition-timing-function: var(--card-animation-func);
-}
-
-.hidden {
-  width: 0px;
-  height: 0px;
-  opacity: 0;
-  transition-property: var(--card-animation-props);
-  transition-duration: var(--card-animation-time);
-  transition-timing-function: var(--card-animation-func);
+  .expandedLarge {
+    height: 200vh;
+  }
 }
