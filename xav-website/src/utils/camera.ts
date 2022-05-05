@@ -1,54 +1,47 @@
-const pos1 = {
-  x: 0,
-  y: 2,
-  z: 4,
-};
+import { buildColors } from "./coloors";
 
-const pos2 = {
-  x: -1,
-  y: 0,
-  z: 5,
-};
+const getCameraPositions = () => {
+  const positions = [];
+  for (let i = 0; i < 5; i++) {
+    positions.push({
+      x: 5 - i * 3,
+      y: 5 - i * 1.25,
+      z: 8 + i * 0.5,
+    });
+  }
 
-const pos3 = {
-  x: 0.2,
-  y: -2,
-  z: 4,
+  return positions;
 };
-
-const pos4 = {
-  x: -0.4,
-  y: -3,
-  z: 4,
-};
-
-const colors = ["#db2b39", "#29335c", "#f3a712", "#534d41", "#db2b39"];
 
 export const randomIntFromInterval = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+interface Shape {
+  color: string;
+  position: number[];
+}
+
 export const generatePositions = () => {
-  return [...colors, ...colors].map((color) => ({
-    position: [
-      randomIntFromInterval(-3, 3),
-      randomIntFromInterval(-3, 3),
-      randomIntFromInterval(-3, 0),
-    ],
-    color,
-  }));
+  const shapes: Shape[] = [];
+
+  buildColors().forEach((color, index) => {
+    const lower = -4 + index * 2;
+    const upper = -2 + index * 2;
+
+    for (let j = 0; j < 4; j++) {
+      shapes.push({
+        position: [
+          randomIntFromInterval(lower, upper) + index,
+          randomIntFromInterval(lower, upper) + 2,
+          index - 3 * j,
+        ],
+        color: color,
+      });
+    }
+  });
+
+  return shapes;
 };
 
-export const generatePosition = () => {
-  const color = colors[randomIntFromInterval(0, 4)];
-  return {
-    position: [
-      randomIntFromInterval(-3, 3),
-      randomIntFromInterval(-3, 3),
-      randomIntFromInterval(-3, 0),
-    ],
-    color,
-  };
-};
-
-export const POSITIONS = [pos1, pos2, pos3, pos4];
+export const POSITIONS = getCameraPositions();

@@ -1,5 +1,9 @@
 const Contact = () => {
-  return <div>hello@xavbruggen.com</div>;
+  return (
+    <div>
+      <p>hello@xavbruggen.com</p>
+    </div>
+  );
 };
 
 export default Contact;

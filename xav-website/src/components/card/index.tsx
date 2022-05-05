@@ -8,7 +8,7 @@ export interface BaseCardProps {
 const Card: React.FC<BaseCardProps> = (props) => {
   return (
     <div
-      className={styles.container}
+      className={`${styles.container}`}
       onClick={() => {
         if (props.onClick) props.onClick();
       }}

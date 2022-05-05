@@ -4,8 +4,6 @@ import styles from "./styles.module.css";
 import Camera from "../camera";
 import { useStoreState } from "../../../store/hooks";
 
-// https://coolors.co/db2b39-b8dbd9-29335c-f3a712-534d41
-
 interface Position {
   color: string;
   position: number[];

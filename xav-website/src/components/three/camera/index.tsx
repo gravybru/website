@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
+import { POSITIONS } from "../../../utils/camera";
 
 const BASE_FRAMES = 50;
 
@@ -14,10 +15,12 @@ interface CameraProps {
 const Camera = ({ position }: CameraProps) => {
   const { camera } = useThree();
 
-  const [positionalDistancePerFrame, setPositionalDistancePerFrame] = useState({
-    x: 0,
-    y: 0,
-    z: 0,
+  const [positionalDistancePerFrame, setPositionalDistancePerFrame] = useState(
+    POSITIONS[0]
+  );
+
+  useEffect(() => {
+    camera.rotation.y = -0.5;
   });
 
   useEffect(() => {
