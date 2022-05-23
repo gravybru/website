@@ -21,6 +21,7 @@ const Home = () => {
         />
       </div>
       <Nav />
+      <div className={styles.buffer}></div>
     </div>
   );
 };

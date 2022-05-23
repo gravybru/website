@@ -19,7 +19,7 @@ export const randomIntFromInterval = (min: number, max: number) => {
 
 interface Shape {
   color: string;
-  position: number[];
+  position: [x: number, y: number, z: number];
 }
 
 export const generatePositions = () => {

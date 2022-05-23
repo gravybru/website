@@ -6,7 +6,7 @@ import { useStoreState } from "../../../store/hooks";
 
 interface Position {
   color: string;
-  position: number[];
+  position: [x: number, y: number, z: number];
 }
 
 interface BackdropProps {

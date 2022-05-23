@@ -20,3 +20,8 @@
     width: 95vw;
   }
 }
+
+.buffer {
+  border: solid transparent;
+  min-height: 1000px;
+}
